@@ -180,16 +180,12 @@ Jumlah karakter menjadi tujuh dan rata-rata level berubah menjadi **6.00**. Hal 
 ## 15. Screenshot Hasil Program TP8
 
 ### Screenshot Sebelum Penambahan Karakter
-<img width="758" height="470" alt="tp8_sesudah png" src="https://github.com/user-attachments/assets/5b928237-c4a0-4fd0-a1ef-d2a4513d7758" />
-<img width="871" height="474" alt="tp8_sebelum png (2)" src="https://github.com/user-attachments/assets/f4f847d7-c85e-4b05-ab1c-3fc27cfe2a2b" />
+<img width="871" height="474" alt="tp8_sebelum png (2)" src="https://github.com/user-attachments/assets/3212f863-26fc-4c4b-a4b7-0a4a4584fe72" />
+<img width="758" height="470" alt="tp8_sesudah png" src="https://github.com/user-attachments/assets/5bba451a-a3c1-4081-9900-8d962f94d016" />
 
-
-### Screenshot Sesudah Penambahan Karakter
 
 Menampilkan tujuh karakter setelah Raphael dan Diana ditambahkan, dengan rata-rata level 6.00.
 
-<img width="871" height="474" alt="tp8_sebelum png (2)" src="https://github.com/user-attachments/assets/56e279a9-b8dd-4d19-b9eb-040cf3195ee6" />
-<img width="758" height="470" alt="tp8_sesudah png" src="https://github.com/user-attachments/assets/f6f4169c-9fa5-45ea-8857-bb0d0869394e" />
 
 
 ## 16. Analisis Alur Data dan Konsep MVC
