@@ -218,6 +218,51 @@ Melalui TP3, TP5, dan TP8, aplikasi Character Manager dikembangkan secara bertah
 
 ---
 
+---
+
+# Character Manager Sprint #4 — TP10
+
+**Theming, Properti Komponen & Analisis MVC**
+
+CPMK 2 · SCPMK 4
+
+## 1. Hasil Implementasi
+
+Pada TP10, aplikasi Character Manager dikembangkan dengan menggunakan class `AppTheme` untuk mengatur warna, font, dan border agar tampilan lebih konsisten.
+
+Fitur yang ditambahkan:
+- Warna kartu karakter berdasarkan role.
+- Level minimal 5 ditampilkan dengan warna emas dan font tebal.
+- Statistik jumlah karakter dan rata-rata level.
+- Tampilan menggunakan layout yang menyesuaikan ukuran komponen.
+
+## 2. Screenshot Hasil
+
+### Sebelum TP10 (v0.3)
+Masukkan screenshot versi sebelumnya di folder `screenshots`.
+
+### Sesudah TP10 (v0.4)
+
+![Character Manager TP10 v0.4](screenshots/tp10_sesudah_v04.png)
+
+## 3. Analisis MVC
+
+Warna dan tampilan aplikasi ditempatkan di `AppTheme` karena pengaturan tersebut merupakan tanggung jawab bagian View. Dengan pemisahan ini, class Model tidak perlu mengetahui warna atau desain antarmuka. Jika desain aplikasi berubah, pengaturan dapat diperbarui melalui `AppTheme` tanpa mengubah logika data karakter. Hal ini membuat kode lebih rapi dan mudah dipelihara.
+
+## 4. Properti Komponen Tambahan
+
+1. **ToolTipText**: Menampilkan informasi nama, role, HP, ATK, dan level ketika pengguna mengarahkan kursor ke kartu karakter.
+2. **Opaque**: Mengatur agar background panel dan kartu karakter terlihat sesuai warna yang telah ditentukan.
+
+## 5. Google Docs Analisis TP10
+
+Link Google Docs: [## 5. Google Docs Analisis TP10
+
+Dokumen analisis TP10:
+
+[JavaVisual_TP10_253303621230_Jesy_Pranisya_Br_Bangun](https://docs.google.com/document/d/1tbPqoyw5vdPTwL-MrhJTH4a1lXjTV1tgzU8ETMpYunU/edit?usp=sharing)]
+
+
 **Identitas Mahasiswa**
 
 Nama: Jesy Pranisya Br Bangun  
