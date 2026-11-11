@@ -262,11 +262,122 @@ Dokumen analisis TP10:
 
 [JavaVisual_TP10_253303621230_Jesy_Pranisya_Br_Bangun](https://docs.google.com/document/d/1tbPqoyw5vdPTwL-MrhJTH4a1lXjTV1tgzU8ETMpYunU/edit?usp=sharing)]
 
+---
 
-**Identitas Mahasiswa**
+# Character Manager Sprint #5 — TP12
+
+## Layout, UI Responsif & Analisis MVC
+
+**CPMK 2 · SCPMK 5**
+
+### 1. Hasil Implementasi TP12
+
+Pada TP12, aplikasi Character Manager dikembangkan menggunakan `BorderLayout` untuk membagi tampilan menjadi empat bagian utama, yaitu:
+
+1. **NORTH (Header):** Menampilkan judul aplikasi, statistik karakter, dan tombol tambah karakter.
+2. **CENTER (Daftar Karakter):** Menampilkan kartu karakter menggunakan `BoxLayout` dan `JScrollPane` agar daftar dapat digulir.
+3. **EAST (Legenda Role):** Menampilkan jenis karakter berdasarkan `CharacterType.values()`.
+4. **SOUTH (Status Bar):** Menampilkan informasi jumlah karakter, rata-rata level, dan versi aplikasi v0.5.
+
+Fitur tambahan:
+- Panel statistik menggunakan `GridLayout` 2 baris dan 2 kolom.
+- Panel tombol menggunakan `FlowLayout`.
+- Daftar karakter dapat digulir ketika ruang tampilan tidak mencukupi.
+- Tampilan menyesuaikan perubahan ukuran jendela.
+- Menampilkan minimal delapan karakter dengan variasi role dan level.
+
+### 2. Wireframe Layout
+
+Berikut gambaran susunan tampilan aplikasi TP12:
+
+```text
++-------------------------------------------------------+
+|                    HEADER (NORTH)                     |
+|              CHARACTER MANAGER DASHBOARD              |
+|                                                       |
+|  Total Karakter | Rata-rata | Level Tertinggi | Role  |
+|                                                       |
+|                 [Tambah 2 Karakter]                   |
++-------------------------------------------+-----------+
+|                                           |           |
+|            DAFTAR KARAKTER                |  LEGENDA  |
+|                 (CENTER)                  |   (EAST)  |
+|                                           |           |
+|  [Arjuna - WARRIOR - Level 5]             | WARRIOR   |
+|  [Merlin - MAGE - Level 3]                | MAGE      |
+|  [Athena - ARCHER - Level 4]              | ARCHER    |
+|  [Bima - WARRIOR - Level 7]               | HEALER    |
+|  [Luna - MAGE - Level 6]                  |           |
+|  [Karakter lainnya...]                    |           |
+|                                           |           |
++-------------------------------------------+-----------+
+|                 STATUS BAR (SOUTH)                    |
+|  Total karakter dan rata-rata level             v0.5 |
++-------------------------------------------------------+
+```
+
+### 3. Screenshot Hasil Program TP12
+
+**Screenshot 1 — Ukuran Awal**
+
+Menampilkan aplikasi ketika pertama kali dijalankan tanpa mengubah ukuran jendela.
+
+![TP12 Ukuran Awal](screenshots/tp12_ukuran_awal.png)
+
+**Screenshot 2 — Ukuran Lebar**
+
+Menampilkan aplikasi setelah jendela diperlebar. Tampilan panel dan daftar karakter menyesuaikan ruang yang tersedia.
+
+![TP12 Ukuran Lebar](screenshots/tp12_ukuran_lebar.png)
+
+**Screenshot 3 — Ukuran Kecil**
+
+Menampilkan aplikasi setelah ukuran jendela diperkecil sehingga scrollbar dapat digunakan untuk melihat daftar karakter.
+
+![TP12 Ukuran Kecil](screenshots/tp12_ukuran_kecil.png)
+
+### 4. Pengamatan Perubahan Ukuran Jendela
+
+| Kondisi | Prediksi | Hasil Pengamatan |
+|---|---|---|
+| Ukuran awal | Semua bagian utama terlihat | Tampilan awal aplikasi terlihat |
+| Ukuran lebar | Ruang daftar karakter bertambah | Panel menyesuaikan ukuran jendela |
+| Ukuran kecil | Daftar karakter dapat digulir | Scrollbar digunakan untuk melihat karakter |
+
+### 5. Struktur Nested Panel
+
+Aplikasi menggunakan beberapa panel yang disusun secara bertingkat. `mainPanel` menjadi panel utama dengan `BorderLayout` yang menampung header, daftar karakter, legenda role, dan status bar. Di dalam header terdapat panel statistik menggunakan `GridLayout` serta panel tombol menggunakan `FlowLayout`. Daftar karakter ditempatkan di dalam `characterWrapper`, kemudian dimasukkan ke `JScrollPane` agar dapat digulir. Panel legenda menggunakan `BoxLayout` dengan susunan vertikal untuk menampilkan setiap jenis karakter.
+
+### 6. Alasan Pemilihan Layout
+
+`BorderLayout` dipilih sebagai layout utama karena dapat membagi jendela menjadi empat wilayah sehingga susunan aplikasi lebih teratur. `GridLayout` dipilih untuk panel statistik karena setiap informasi memiliki ukuran dan susunan yang konsisten. `BoxLayout` digunakan pada daftar karakter dan legenda karena komponennya disusun secara vertikal. Sementara itu, `FlowLayout` digunakan pada panel tombol agar tombol dapat ditempatkan secara sederhana dan rapi.
+
+Layout absolut menggunakan `setLayout(null)` dan `setBounds()` tidak dipilih karena posisi dan ukuran komponen harus diatur secara manual. Hal tersebut membuat tampilan lebih sulit menyesuaikan diri ketika ukuran jendela berubah.
+
+### 7. Google Docs Analisis TP12
+
+Dokumentasi analisis TP12 membahas:
+
+- Kelemahan penggunaan `setLayout(null)` dan `setBounds()`.
+- Fungsi LayoutManager dan preferred size.
+- Perilaku `BorderLayout` ketika ukuran jendela berubah.
+- Perbandingan `GridLayout` dan `BoxLayout`.
+- Alasan kode layout ditempatkan pada bagian View dalam konsep MVC.
+- Fungsi `revalidate()` dan `repaint()` dalam memperbarui tampilan.
+
+**Link Google Docs Analisis TP12:**
+
+[Klik di sini untuk membuka Google Docs Analisis TP12](**Link Google Docs Analisis TP12:**
+
+[Klik di sini untuk membuka Google Docs Analisis TP12](https://docs.google.com/document/d/1mxBX7FDwdblk6iUEw6Hq1VEyviyUGTD8Rfb7cAsY7g0/edit?usp=sharing))
+
+### 8. Identitas Mahasiswa
 
 Nama: Jesy Pranisya Br Bangun  
 NIM: 253303621230  
 Program Studi: Sistem Informasi  
-Universitas Prima Indonesia  
-Mata Kuliah: Pemrograman Berorientasi Objek
+Universitas: Universitas Prima Indonesia  
+Mata Kuliah: Pemrograman Berorientasi Objek  
+Tugas: Character Manager Sprint #5 (TP12)
+
+---
