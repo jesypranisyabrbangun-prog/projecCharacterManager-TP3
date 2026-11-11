@@ -31,7 +31,9 @@ public class Main {
 
             manager.addCharacter(
                     new Character("Luna", CharacterType.MAGE, 6));
-
+                manager.addCharacter(
+                new Character("Sinta", CharacterType.HEALER, 2)
+                );
             // Penanda agar karakter tambahan hanya dimasukkan satu kali
             final boolean[] sudahDitambahkan = {false};
 
