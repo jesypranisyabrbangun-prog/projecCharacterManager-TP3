@@ -181,6 +181,8 @@ Jumlah karakter menjadi tujuh dan rata-rata level berubah menjadi **6.00**. Hal 
 
 ### Screenshot Sebelum Penambahan Karakter
 <img width="871" height="474" alt="tp8_sebelum png (2)" src="https://github.com/user-attachments/assets/3212f863-26fc-4c4b-a4b7-0a4a4584fe72" />
+
+### Screenshot Sesudah Penambahan Karakter
 <img width="758" height="470" alt="tp8_sesudah png" src="https://github.com/user-attachments/assets/5bba451a-a3c1-4081-9900-8d962f94d016" />
 
 
