@@ -1,10 +1,11 @@
-# Character Manager — TP3 (Java Visual SIH-6406)
+# Character Manager — TP3 & TP5
+**Java Visual SIH-6406**
 
 ## 1. Deskripsi Proyek
 
-Character Manager adalah aplikasi sederhana berbasis Java yang digunakan untuk mengelola karakter dalam sebuah game. Proyek ini dibuat untuk menerapkan konsep Object-Oriented Programming (OOP) seperti Class, Object, Constructor, Encapsulation, Getter, Setter, dan Enum.
+Character Manager adalah aplikasi sederhana berbasis Java yang digunakan untuk mengelola karakter dalam sebuah game. Proyek ini dibuat untuk menerapkan konsep Object-Oriented Programming (OOP), seperti Class, Object, Constructor, Encapsulation, Getter, Setter, Enum, ArrayList, dan Object Reference.
 
-## 2. Fitur Program
+## 2. Fitur Program TP3
 
 - Membuat objek karakter menggunakan constructor.
 - Menampilkan informasi karakter.
@@ -17,12 +18,13 @@ Character Manager adalah aplikasi sederhana berbasis Java yang digunakan untuk m
 ## 3. Jenis Karakter
 
 Program memiliki empat jenis karakter:
+
 - WARRIOR
 - MAGE
 - ARCHER
 - HEALER
 
-## 4. Struktur Folder
+## 4. Struktur Folder Proyek
 
 ```text
 ProjecCharacterManager/
@@ -34,19 +36,22 @@ ProjecCharacterManager/
 │           └── charactermanager/
 │               └── model/
 │                   ├── Character.java
-│                   └── CharacterType.java
+│                   ├── CharacterType.java
+│                   └── CharacterManager.java
 │
 ├── screenshots/
-│   └── tp_3.png
+│   ├── tp_3.png
+│   ├── tp_5.png
+│   └── tp5.png
 │
 └── README.md
 ```
 
-## 5. Screenshot Hasil Program
+## 5. Screenshot Hasil Program TP3
 
-Screenshot berikut menunjukkan hasil eksekusi aplikasi Character Manager TP3.
+Screenshot berikut menunjukkan hasil eksekusi aplikasi Character Manager pada TP3.
 
-![Screenshot Hasil Program](screenshots/tp_3.png)
+![Screenshot Hasil Program TP3](screenshots/tp_3.png)
 
 ## 6. Identitas Mahasiswa
 
@@ -54,40 +59,76 @@ Screenshot berikut menunjukkan hasil eksekusi aplikasi Character Manager TP3.
 - **NIM:** 253303621230
 - **Program Studi:** Sistem Informasi
 - **Universitas:** Universitas Prima Indonesia
-- **Tugas:** Character Manager Sprint #1 (TP3)
 - **Mata Kuliah:** Pemrograman Berorientasi Objek
+- **Tugas:** Character Manager Sprint #1 (TP3) dan Sprint #2 (TP5)
 
-## 7. Dokumentasi Google Docs
+## 7. Dokumentasi Google Docs TP3
 
-Dokumentasi analisis dan pembahasan TP3 dapat dilihat melalui tautan berikut:
+Dokumentasi analisis dan pembahasan tugas TP3 dapat dibuka melalui tautan berikut:
 
-[BUKA DOKUMENTASI GOOGLE DOCS TP3](https://docs.google.com/document/d/1u7Xp926uOyoA4-ykONDtI0S-yILRtdFkxvSFbVrXS6k/edit?usp=sharing)
+[Klik di sini untuk membuka Google Docs TP3](https://docs.google.com/document/d/1u7Xp926uOyoA4-ykONDtI0S-yILRtdFkxvSFbVrXS6k/edit?usp=sharing)
 
+---
 
+# TP5 — Character Manager Sprint #2
 
-## TP5 — Character Manager Sprint #2
+## 8. Fitur yang Diimplementasikan
 
-### Fitur yang Diimplementasikan
+Pada TP5, aplikasi dikembangkan dengan menambahkan pengelolaan karakter menggunakan ArrayList dan beberapa method tambahan.
+
 1. **equals():** Membandingkan karakter berdasarkan nama tanpa membedakan huruf besar dan kecil.
-2. **CharacterManager:** Menambahkan, mencari, menghapus, dan menampilkan karakter.
-3. **getAverageLevel():** Menghitung rata-rata level karakter. Menghasilkan 0 jika daftar kosong.
-4. **findByType():** Mencari karakter berdasarkan tipe.
-5. **getAllCharacters():** Mengembalikan salinan daftar karakter agar daftar asli tidak dapat diubah melalui daftar hasil pengembalian.
-6. **findStrongest():** Menemukan karakter dengan attack power tertinggi.
-7. **Static Counter:** Menghitung jumlah objek Character yang telah dibuat.
+2. **addCharacter():** Menambahkan karakter baru dan menolak nama karakter yang duplikat.
+3. **findByName():** Mencari karakter berdasarkan nama.
+4. **removeCharacter():** Menghapus karakter dari daftar.
+5. **getTotalCharacters():** Menghitung jumlah karakter yang tersimpan.
+6. **getAllCharacters():** Mengembalikan salinan daftar karakter agar daftar asli tidak dapat diubah melalui daftar hasil pengembalian.
+7. **getAverageLevel():** Menghitung rata-rata level karakter dan menghasilkan 0 jika daftar kosong.
+8. **findByType():** Mencari karakter berdasarkan jenis karakter.
+9. **findStrongest():** Menemukan karakter dengan attack power tertinggi.
+10. **Static Counter:** Menghitung jumlah objek Character yang telah dibuat.
 
-### Hasil Pengujian
-- Penambahan karakter berhasil.
-- Nama karakter duplikat ditolak.
-- Pencarian dan penghapusan karakter berhasil.
-- Rata-rata level berhasil dihitung.
-- Pencarian berdasarkan tipe berhasil.
-- Eksperimen salinan ArrayList berhasil.
-- Eksperimen object reference dan equals berhasil.
-- Karakter dengan attack power tertinggi berhasil ditemukan.
+## 9. Hasil Pengujian TP5
 
-### Alasan Memilih Fitur findStrongest()
-Fitur findStrongest() dipilih karena dapat membantu mengetahui karakter dengan attack power tertinggi. Fitur ini juga melatih penggunaan perulangan, percabangan, dan pengambilan data dari ArrayList.
+Pengujian dilakukan melalui program Main.java.
 
-### Screenshot
-![Hasil pengujian TP5](screenshots/tp_5.png)
+Hasil pengujian menunjukkan:
+
+- Penambahan empat karakter berhasil.
+- Nama karakter duplikat berhasil ditolak.
+- Pencarian karakter Merlin berhasil.
+- Penghapusan karakter Athena berhasil.
+- Jumlah karakter setelah penghapusan menjadi 3.
+- Rata-rata level karakter menghasilkan 5.0.
+- Rata-rata pada daftar kosong menghasilkan 0.0.
+- Pencarian karakter berdasarkan tipe WARRIOR berhasil.
+- Pengujian salinan ArrayList berhasil.
+- Pengujian object reference berhasil.
+- Method equals() berhasil membandingkan nama karakter.
+- Method findStrongest() berhasil menemukan karakter Bima.
+- Static counter berhasil menghitung 9 objek yang dibuat.
+
+## 10. Alasan Memilih Fitur findStrongest()
+
+Fitur `findStrongest()` dipilih karena dapat membantu mengetahui karakter yang memiliki attack power tertinggi. Fitur ini berguna dalam pengelolaan karakter game dan melatih penggunaan perulangan, percabangan, serta pengambilan data dari ArrayList.
+
+## 11. Screenshot Hasil Program TP5
+
+### Screenshot 1
+
+![Hasil Pengujian TP5 Screenshot 1](screenshots/tp_5.png)
+
+### Screenshot 2
+
+![Hasil Pengujian TP5 Screenshot 2](screenshots/tp5.png)
+
+## 12. Dokumentasi Google Docs Analisis TP5
+
+Dokumentasi analisis TP5 membahas beberapa materi, yaitu:
+
+- Perbedaan primitive dan reference semantics.
+- Alasan penggunaan static counter.
+- Perbedaan Object.equals() dan equals() yang telah diubah.
+- Risiko mengembalikan ArrayList asli.
+- Kesimpulan hasil pembelajaran TP5.
+
+[Klik di sini untuk membuka Google Docs Analisis TP5]([Klik di sini untuk membuka Google Docs TP5](p=sharing)
