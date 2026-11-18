@@ -14,7 +14,7 @@ public class CharacterManager {
             return false;
         }
 
-        if (findByName(character.getName()) != null) {
+        if (isNameTaken(character.getName())) {
             System.out.println("Karakter " + character.getName()
                     + " sudah ada!");
             return false;
@@ -34,7 +34,7 @@ public class CharacterManager {
 
         for (Character character : characterList) {
             if (character.getName() != null
-                    && character.getName().equalsIgnoreCase(name)) {
+                    && character.getName().equalsIgnoreCase(name.trim())) {
                 return character;
             }
         }
@@ -42,7 +42,16 @@ public class CharacterManager {
         return null;
     }
 
-    // 3. Menghapus karakter berdasarkan nama
+    // 3. Memeriksa apakah nama sudah digunakan
+    public boolean isNameTaken(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            return false;
+        }
+
+        return findByName(name.trim()) != null;
+    }
+
+    // 4. Menghapus karakter berdasarkan nama
     public boolean removeCharacter(String name) {
         Character character = findByName(name);
 
@@ -54,17 +63,17 @@ public class CharacterManager {
         return true;
     }
 
-    // 4. Menghitung jumlah karakter
+    // 5. Menghitung jumlah karakter
     public int getTotalCharacters() {
         return characterList.size();
     }
 
-    // 5. Mengembalikan salinan daftar karakter
+    // 6. Mengembalikan salinan daftar karakter
     public ArrayList<Character> getAllCharacters() {
         return new ArrayList<>(characterList);
     }
 
-    // 6. Menghitung rata-rata level
+    // 7. Menghitung rata-rata level
     public double getAverageLevel() {
         if (characterList.isEmpty()) {
             return 0;
@@ -79,7 +88,7 @@ public class CharacterManager {
         return (double) totalLevel / characterList.size();
     }
 
-    // 7. Mencari semua karakter berdasarkan tipe
+    // 8. Mencari semua karakter berdasarkan tipe
     public ArrayList<Character> findByType(CharacterType type) {
         ArrayList<Character> result = new ArrayList<>();
 
@@ -96,10 +105,7 @@ public class CharacterManager {
         return result;
     }
 
-    /**
-     * Mencari karakter dengan attack power tertinggi.
-     * @return karakter terkuat atau null jika daftar kosong.
-     */
+    // 9. Mencari karakter dengan attack power tertinggi
     public Character findStrongest() {
         if (characterList.isEmpty()) {
             return null;
@@ -117,4 +123,3 @@ public class CharacterManager {
         return strongest;
     }
 }
-
