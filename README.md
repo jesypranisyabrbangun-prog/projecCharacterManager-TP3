@@ -385,7 +385,7 @@ Dokumentasi analisis TP14 membahas:
 
 **Tautan Google Docs TP14:**
 
-[Masukkan tautan Google Docs TP14 di sini]
+[(https://docs.google.com/document/d/1GeDvsxpmTQdCEGZ9SsC10Y1s9bXtHwA5EoNEVcLsQrk/edit?usp=sharing)]
 
 ## 31. Kesimpulan TP14
 
@@ -417,3 +417,12 @@ Secara keseluruhan, proyek ini membantu memahami penerapan OOP, pengelolaan data
 - **Mata Kuliah:** Pemrograman Berorientasi Objek
 - **Kode Mata Kuliah:** Java Visual SIH-6406
 - **Proyek:** Character Manager TP3, TP5, TP8, TP10, TP12, dan TP14
+
+## Dokumentasi TP14 — Sprint #6
+
+**Nama:** Jesy Pranisya Br Bangun  
+**NIM:** 253303621230
+
+**Google Docs TP14:**
+
+[Klik di sini untuk membuka laporan TP14](https://docs.google.com/document/d/1GeDvsxpmTQdCEGZ9SsC10Y1s9bXtHwA5EoNEVcLsQrk/edit?usp=sharing)
