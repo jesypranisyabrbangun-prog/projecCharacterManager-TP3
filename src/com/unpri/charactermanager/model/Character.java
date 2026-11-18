@@ -19,11 +19,13 @@ public class Character {
     private int attackPower;
     private int mana;
 
-    // Menghitung jumlah object Character yang dibuat
     private static int totalCharacterCreated = 0;
 
     // ===== CONSTRUCTOR 1 =====
     public Character(String name, CharacterType type, int level) {
+
+        validateIdentity(name, type);
+
         this.name = name;
         this.type = type;
 
@@ -37,15 +39,33 @@ public class Character {
     public Character(int id, String name, CharacterType type,
                      int level, int hitPoints, int attackPower) {
 
+        validateIdentity(name, type);
+
         this.id = id;
         this.name = name;
         this.type = type;
-        this.level = level;
+
+        setLevel(level);
+
         this.hitPoints = hitPoints;
         this.attackPower = attackPower;
         this.mana = 0;
 
         totalCharacterCreated++;
+    }
+
+    // ===== VALIDASI IDENTITAS =====
+    private void validateIdentity(String name, CharacterType type) {
+
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Nama tidak boleh kosong");
+        }
+
+        if (type == null) {
+            throw new IllegalArgumentException(
+                    "Role wajib dipilih");
+        }
     }
 
     // ===== HELPER PRIVATE =====
@@ -96,9 +116,15 @@ public class Character {
     }
 
     public void setLevel(int level) {
-        if (level < 1) {
+
+        if (level < 1 || level > 99) {
             throw new IllegalArgumentException(
-                    "Level minimal adalah 1");
+                    "Level harus 1-99");
+        }
+
+        if (type == CharacterType.MAGE && level > 60) {
+            throw new IllegalArgumentException(
+                    "MAGE tidak boleh memiliki level di atas 60");
         }
 
         this.level = level;
@@ -107,6 +133,7 @@ public class Character {
     }
 
     public void setMana(int mana) {
+
         if (mana < 0) {
             throw new IllegalArgumentException(
                     "Mana tidak boleh negatif");
@@ -126,10 +153,6 @@ public class Character {
     }
 
     // ===== EQUALS =====
-    /**
-     * Membandingkan dua karakter berdasarkan nama.
-     * Tidak membedakan huruf besar dan kecil.
-     */
     @Override
     public boolean equals(Object obj) {
 
