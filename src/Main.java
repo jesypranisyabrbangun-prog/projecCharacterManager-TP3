@@ -10,13 +10,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Menjalankan aplikasi Swing pada Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
 
-            // Membuat objek CharacterManager
+            // Membuat pengelola karakter
             CharacterManager manager = new CharacterManager();
 
-            // Menambahkan 5 karakter awal
+            // Menambahkan karakter awal
             manager.addCharacter(
                     new Character("Arjuna", CharacterType.WARRIOR, 5));
 
@@ -32,33 +31,10 @@ public class Main {
             manager.addCharacter(
                     new Character("Luna", CharacterType.MAGE, 6));
 
-            // Penanda agar karakter tambahan hanya dimasukkan satu kali
-            final boolean[] sudahDitambahkan = {false};
+            // Membuat dan menampilkan jendela aplikasi
+            MainWindow window = new MainWindow(manager);
 
-            // Referensi jendela aplikasi
-            final MainWindow[] windowRef = new MainWindow[1];
-
-            // Membuat MainWindow
-            windowRef[0] = new MainWindow(manager, event -> {
-
-                // Menambahkan 2 karakter ketika tombol ditekan
-                if (!sudahDitambahkan[0]) {
-
-                    manager.addCharacter(
-                            new Character("Raphael", CharacterType.HEALER, 8));
-
-                    manager.addCharacter(
-                            new Character("Diana", CharacterType.ARCHER, 9));
-
-                    sudahDitambahkan[0] = true;
-                }
-
-                // Memperbarui tampilan daftar karakter dan rata-rata level
-                windowRef[0].refreshCharacterList();
-            });
-
-            // Menampilkan jendela aplikasi
-            windowRef[0].setVisible(true);
+            window.setVisible(true);
         });
     }
 }
