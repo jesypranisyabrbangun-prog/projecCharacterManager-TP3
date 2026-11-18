@@ -4,11 +4,9 @@ package com.unpri.charactermanager.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,18 +21,18 @@ public class MainWindow extends JFrame {
     private CharacterManager manager;
     private JPanel characterPanel;
     private JLabel statisticsLabel;
-    private JButton addButton;
 
-    public MainWindow(CharacterManager manager, ActionListener addAction) {
+    public MainWindow(CharacterManager manager) {
 
         this.manager = manager;
 
-        setTitle("Character Manager - TP8");
-        setSize(650, 500);
+        setTitle("Character Manager - TP14");
+        setSize(750, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
+        // Judul aplikasi
         JLabel titleLabel = new JLabel(
                 "CHARACTER MANAGER",
                 SwingConstants.CENTER
@@ -43,11 +41,26 @@ public class MainWindow extends JFrame {
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setForeground(new Color(35, 55, 90));
         titleLabel.setBorder(
-                BorderFactory.createEmptyBorder(20, 10, 15, 10)
+                BorderFactory.createEmptyBorder(15, 10, 15, 10)
         );
 
-        add(titleLabel, BorderLayout.NORTH);
+        // Form input karakter
+        CharacterFormPanel formPanel = new CharacterFormPanel(
+                manager,
+                character -> {
+                    if (manager.addCharacter(character)) {
+                        refreshCharacterList();
+                    }
+                }
+        );
 
+        JPanel topPanel = new JPanel(new BorderLayout());
+        topPanel.add(titleLabel, BorderLayout.NORTH);
+        topPanel.add(formPanel, BorderLayout.CENTER);
+
+        add(topPanel, BorderLayout.NORTH);
+
+        // Panel daftar karakter
         characterPanel = new JPanel();
         characterPanel.setLayout(
                 new BoxLayout(characterPanel, BoxLayout.Y_AXIS)
@@ -60,8 +73,7 @@ public class MainWindow extends JFrame {
         JScrollPane scrollPane = new JScrollPane(characterPanel);
         add(scrollPane, BorderLayout.CENTER);
 
-        JPanel bottomPanel = new JPanel(new BorderLayout(5, 10));
-
+        // Statistik karakter
         statisticsLabel = new JLabel(
                 "Rata-rata Level: 0",
                 SwingConstants.CENTER
@@ -73,21 +85,19 @@ public class MainWindow extends JFrame {
 
         statisticsLabel.setForeground(new Color(20, 110, 70));
 
-        addButton = new JButton("Tambah 2 Karakter");
-        addButton.addActionListener(addAction);
-
+        JPanel bottomPanel = new JPanel(new BorderLayout());
         bottomPanel.setBorder(
                 BorderFactory.createEmptyBorder(10, 15, 15, 15)
         );
 
-        bottomPanel.add(statisticsLabel, BorderLayout.NORTH);
-        bottomPanel.add(addButton, BorderLayout.SOUTH);
+        bottomPanel.add(statisticsLabel, BorderLayout.CENTER);
 
         add(bottomPanel, BorderLayout.SOUTH);
 
         refreshCharacterList();
     }
 
+    // Memperbarui daftar karakter
     public void refreshCharacterList() {
 
         characterPanel.removeAll();
