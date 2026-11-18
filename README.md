@@ -385,7 +385,6 @@ Dokumentasi analisis TP14 membahas:
 
 **Tautan Google Docs TP14:**
 
-[(https://docs.google.com/document/d/1GeDvsxpmTQdCEGZ9SsC10Y1s9bXtHwA5EoNEVcLsQrk/edit?usp=sharing)]
 
 ## 31. Kesimpulan TP14
 
